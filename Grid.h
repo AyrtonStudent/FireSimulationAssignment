@@ -15,6 +15,10 @@ public:
     int forestSize = 21;
     void populateForest();
     void print();
+
+    void spreadFire();
+
+    bool isNeighbourBurning(int row, int column);
 };
 
 

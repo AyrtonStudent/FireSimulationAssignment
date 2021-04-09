@@ -10,3 +10,14 @@ void Cell::printIcon()
     cout << icon;
 }
 
+bool Cell::isBurning() {
+    if (icon == 'x')
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+

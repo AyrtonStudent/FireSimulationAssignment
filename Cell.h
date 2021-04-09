@@ -7,15 +7,17 @@
 
 
 class Cell
-    {
-    public:
-        int xCoordinate;
-        int yCoordinate;
-        char icon = 'C';
-        void printIcon();
+{
+public:
+    int xCoordinate;
+    int yCoordinate;
+    char icon = 'C';
+    void printIcon();
 
+virtual void doTurn(bool isNeighbourBurning)=0;
 
-    };
+    bool isBurning();
+};
 
 
 

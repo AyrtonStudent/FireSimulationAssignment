@@ -9,3 +9,7 @@ Tree::Tree() {
     icon = '&';
 }
 
+void Tree::doTurn(bool isNeighbourBurning) {
+
+}
+

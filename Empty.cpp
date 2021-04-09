@@ -10,3 +10,7 @@ Empty::Empty()
     icon = ' ';
 }
 
+void Empty::doTurn(bool isNeighbourBurning) {
+
+}
+

@@ -10,3 +10,7 @@ Burning::Burning()
 {
     icon = 'x';
 }
+
+void Burning::doTurn(bool isNeighbourBurning) {
+
+}

@@ -19,10 +19,16 @@ I had a crack at the whole solution yesterday btw, there's a couple things we sh
 
 int main()
 {
+
     Grid* grid = new Grid();
     grid->populateForest();
     grid->print();
+
+    grid->spreadFire();
+
     return 0;
+
+
 }
 
 //move all classes like *cell* into .cpp and .h files untitled>C++ class>

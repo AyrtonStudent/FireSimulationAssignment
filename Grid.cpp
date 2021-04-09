@@ -43,3 +43,34 @@ void Grid::print()
         //printout char of each cell, make char
     }
 }
+
+void Grid::spreadFire() {
+    for (int row = 1; row < forestSize-1; row++)
+    {
+        for (int column = 1; column < forestSize-1; column++)
+        {
+
+            bool neighbourBurning = isNeighbourBurning(row, column);
+            forest [row][column]->doTurn(neighbourBurning);
+        }
+    }
+}
+
+bool Grid::isNeighbourBurning(int row, int column)
+{
+    //come up with a plan to get the tree to recognise other tree is burning and should burn too
+    /* An if statement stating that if a tree with 1 co-ordinal value of this tree is on fire,
+     * a randomizer should give the tree a 50% of catching fire itself. After that statement follows
+     * another one where if a tree if already on fire that it remains on fire (only if first statement
+     * doesn't work fully)*/
+
+
+    if (forest [row][column+1]->isBurning() ||
+        forest [row-1][column]->isBurning() ||
+        forest [row][column-1]->isBurning() ||
+        forest [row+1][column]->isBurning())
+    {
+        return true;
+    }
+    return false;
+}
