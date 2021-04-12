@@ -20,11 +20,29 @@ I had a crack at the whole solution yesterday btw, there's a couple things we sh
 int main()
 {
 
-    Grid* grid = new Grid();
-    grid->populateForest();
-    grid->print();
+    Grid* grid1 = new Grid();
+    Grid* grid2 = new Grid();
 
-    grid->spreadFire();
+    grid1->populateForest();
+    grid2->populateForest();
+
+    grid1->print();
+
+
+    while (true)
+    {
+        string userInput;
+        cin >> userInput;
+
+        grid1->spreadFire(grid2);
+        grid1->print();
+
+        cin >> userInput;
+
+        grid2->spreadFire(grid1);
+        grid2->print();
+    }
+
 
     return 0;
 

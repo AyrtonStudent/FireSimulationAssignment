@@ -3,13 +3,18 @@
 //
 using namespace std;
 #include "Tree.h"
+#include "Burning.h"
 #include <iostream>
 
 Tree::Tree() {
     icon = '&';
 }
 
-void Tree::doTurn(bool isNeighbourBurning) {
-
+Cell* Tree::doTurn(bool isNeighbourBurning) {
+    if (isNeighbourBurning == true)
+    {
+        return new Burning();
+    }
+    return this;
 }
 

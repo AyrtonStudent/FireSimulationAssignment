@@ -11,7 +11,7 @@ class Burning : public Cell
 {
 public:
     Burning();
-    void doTurn(bool isNeighbourBurning) override;
+    Cell* doTurn(bool isNeighbourBurning) override;
 };
 
 #endif //UNTITLED_BURNING_H

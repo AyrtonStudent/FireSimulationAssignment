@@ -16,7 +16,7 @@ public:
     void populateForest();
     void print();
 
-    void spreadFire();
+    void spreadFire(Grid* otherGrid);
 
     bool isNeighbourBurning(int row, int column);
 };

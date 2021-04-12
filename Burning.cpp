@@ -4,6 +4,7 @@
 
 using namespace std;
 #include "Burning.h"
+#include "Empty.h"
 #include <iostream>
 
 Burning::Burning()
@@ -11,6 +12,7 @@ Burning::Burning()
     icon = 'x';
 }
 
-void Burning::doTurn(bool isNeighbourBurning) {
+Cell* Burning::doTurn(bool isNeighbourBurning) {
 
+    return new Empty();
 }

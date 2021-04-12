@@ -11,7 +11,7 @@ class Tree : public Cell
 {
 public:
     Tree();
-    void doTurn(bool isNeighbourBurning) override;
+    Cell* doTurn(bool isNeighbourBurning) override;
 };
 
 #endif //UNTITLED_TREE_H

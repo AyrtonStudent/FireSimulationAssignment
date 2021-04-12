@@ -11,7 +11,7 @@ class Empty : public Cell
 {
 public:
     Empty();
-    void doTurn(bool isNeighbourBurning) override;
+    Cell* doTurn(bool isNeighbourBurning) override;
 };
 
 #endif //UNTITLED_EMPTY_H

@@ -14,7 +14,7 @@ public:
     char icon = 'C';
     void printIcon();
 
-virtual void doTurn(bool isNeighbourBurning)=0;
+virtual Cell* doTurn(bool isNeighbourBurning)=0;
 
     bool isBurning();
 };

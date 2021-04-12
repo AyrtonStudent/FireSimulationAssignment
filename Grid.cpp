@@ -44,14 +44,18 @@ void Grid::print()
     }
 }
 
-void Grid::spreadFire() {
+void Grid::spreadFire(Grid* otherGrid) {
     for (int row = 1; row < forestSize-1; row++)
     {
         for (int column = 1; column < forestSize-1; column++)
         {
 
-            bool neighbourBurning = isNeighbourBurning(row, column);
-            forest [row][column]->doTurn(neighbourBurning);
+            bool neighbourBurning = otherGrid->isNeighbourBurning(row, column);
+            Cell* cell = forest [row][column]->doTurn(neighbourBurning);
+            forest [row][column] = cell;
+            //make a cell pointer in the same method and assign it to line above
+            //
+
         }
     }
 }

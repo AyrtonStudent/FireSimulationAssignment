@@ -10,7 +10,8 @@ Empty::Empty()
     icon = ' ';
 }
 
-void Empty::doTurn(bool isNeighbourBurning) {
+Cell* Empty::doTurn(bool isNeighbourBurning) {
 
+return this;
 }
 
