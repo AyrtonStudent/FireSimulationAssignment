@@ -14,5 +14,6 @@ Burning::Burning()
 
 Cell* Burning::doTurn(bool isNeighbourBurning) {
 
+    delete this;
     return new Empty();
 }

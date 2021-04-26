@@ -4,6 +4,7 @@
 CMakeFiles\untitled.dir\Burning.cpp.obj: ..\Burning.cpp
 CMakeFiles\untitled.dir\Burning.cpp.obj: ..\Burning.h
 CMakeFiles\untitled.dir\Burning.cpp.obj: ..\Cell.h
+CMakeFiles\untitled.dir\Burning.cpp.obj: ..\Empty.h
 
 CMakeFiles\untitled.dir\Cell.cpp.obj: ..\Cell.cpp
 CMakeFiles\untitled.dir\Cell.cpp.obj: ..\Cell.h
@@ -19,6 +20,7 @@ CMakeFiles\untitled.dir\Grid.cpp.obj: ..\Grid.cpp
 CMakeFiles\untitled.dir\Grid.cpp.obj: ..\Grid.h
 CMakeFiles\untitled.dir\Grid.cpp.obj: ..\Tree.h
 
+CMakeFiles\untitled.dir\Tree.cpp.obj: ..\Burning.h
 CMakeFiles\untitled.dir\Tree.cpp.obj: ..\Cell.h
 CMakeFiles\untitled.dir\Tree.cpp.obj: ..\Tree.cpp
 CMakeFiles\untitled.dir\Tree.cpp.obj: ..\Tree.h

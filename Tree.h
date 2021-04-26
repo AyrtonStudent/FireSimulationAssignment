@@ -12,6 +12,8 @@ class Tree : public Cell
 public:
     Tree();
     Cell* doTurn(bool isNeighbourBurning) override;
+
+    bool fiftyPercent();
 };
 
 #endif //UNTITLED_TREE_H

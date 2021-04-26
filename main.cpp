@@ -3,50 +3,50 @@ using namespace std;
 #include <vector>
 #include "Grid.h"
 
-/*
-Each cell should have a char variable, see if you can cout that variable of each cell in the grid
-I had a crack at the whole solution yesterday btw, there's a couple things we should go through.
- But have a look at this https://www.w3schools.com/cpp/cpp_pointers.asp and see if you can familiarise
- yourself a bit more with pointers and references too snd instead of having the array of Cells for the grid,
- I think that we should have a std::vector<Cell*>. This syntax just reads as a vector of type Cell pointer.
- A vector is very similar to an array, but works more like a stack. You can add things to it by using
- grid.push_back(new Cell()), so that you can test your print method (Don't worry if you struggle with
- pointers, it's a big thing to understand for a lot of programmers)
-*/
+/* 2 Grids are being utilised to pass the data between each them to get the lastest information relevant to them.
+ * This is done as to not effect the current spread of fire.*/
 
+Grid* grid1 = new Grid();
+Grid* grid2 = new Grid();
 
+void spreadFire (bool isGrid1)
+{
+    if (isGrid1 == true)
+    {
+        grid1->spreadFire(grid2);
+        grid1->print();
+    }
+    else
+    {
+        grid2->spreadFire(grid1);
+        grid2->print();
+    }
 
+}
 
 int main()
 {
+    string output1 = "Grid 1:";
+    string output2 = "Grid 2:";
 
-    Grid* grid1 = new Grid();
-    Grid* grid2 = new Grid();
-
+    cout << output1;
     grid1->populateForest();
     grid2->populateForest();
 
     grid1->print();
 
-
+    bool isGrid1 = true;
     while (true)
     {
         string userInput;
         cin >> userInput;
-
-        grid1->spreadFire(grid2);
-        grid1->print();
-
-        cin >> userInput;
-
-        grid2->spreadFire(grid1);
-        grid2->print();
+        if (userInput == "q")
+            break;
+        spreadFire(isGrid1);
+        isGrid1 = !isGrid1;
     }
-
-
     return 0;
-
-
 }
+
 
 //move all classes like *cell* into .cpp and .h files untitled>C++ class>

@@ -49,12 +49,18 @@ void Grid::spreadFire(Grid* otherGrid) {
     {
         for (int column = 1; column < forestSize-1; column++)
         {
+            if (otherGrid->forest [row][column]->isBurning())
+            {
+                forest [row][column] = new Empty();
+            }
+            else
+            {
+                bool neighbourBurning = otherGrid->isNeighbourBurning(row, column);
+                Cell* cell = forest [row][column]->doTurn(neighbourBurning);
+                forest [row][column] = cell;
+            }
 
-            bool neighbourBurning = otherGrid->isNeighbourBurning(row, column);
-            Cell* cell = forest [row][column]->doTurn(neighbourBurning);
-            forest [row][column] = cell;
-            //make a cell pointer in the same method and assign it to line above
-            //
+            //work out why grid 2 (in main) is outputting incorrectly
 
         }
     }
@@ -62,13 +68,6 @@ void Grid::spreadFire(Grid* otherGrid) {
 
 bool Grid::isNeighbourBurning(int row, int column)
 {
-    //come up with a plan to get the tree to recognise other tree is burning and should burn too
-    /* An if statement stating that if a tree with 1 co-ordinal value of this tree is on fire,
-     * a randomizer should give the tree a 50% of catching fire itself. After that statement follows
-     * another one where if a tree if already on fire that it remains on fire (only if first statement
-     * doesn't work fully)*/
-
-
     if (forest [row][column+1]->isBurning() ||
         forest [row-1][column]->isBurning() ||
         forest [row][column-1]->isBurning() ||
